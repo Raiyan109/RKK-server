@@ -20,7 +20,8 @@ const courseSchema = new Schema({
         required: true
     },
     category: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Category',
         required: true
     },
     length: {
@@ -36,7 +37,18 @@ const courseSchema = new Schema({
     isFree: {
         type: Boolean,
     },
-    userType: String,
+    rating: {
+        type: Number,
+        default: 0,
+    },
+    numReviews: {
+        type: Number,
+        default: 0,
+    },
+    dateCreated: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 
