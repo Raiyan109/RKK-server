@@ -1,5 +1,5 @@
 const express = require('express');
-const { createCategory, getCategories, deleteCategory } = require('../controllers/categoryController.js')
+const { createCategory, getCategories, deleteCategory, getCategory } = require('../controllers/categoryController.js')
 
 const router = express.Router()
 
@@ -7,6 +7,9 @@ const router = express.Router()
 // routes
 // GET
 router.get('/', getCategories)
+
+// GET a single category
+router.get('/:id', getCategory)
 
 // POST
 router.post('/', createCategory)

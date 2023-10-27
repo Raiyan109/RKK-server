@@ -17,7 +17,8 @@ const courseSchema = new Schema({
     },
     desc: {
         type: String,
-        required: true
+        required: true,
+        default: '',
     },
     category: {
         type: mongoose.Types.ObjectId,
@@ -30,9 +31,11 @@ const courseSchema = new Schema({
     },
     chapters: {
         type: Number,
+        default: 0,
     },
     price: {
         type: Number,
+        default: 0,
     },
     isFree: {
         type: Boolean,

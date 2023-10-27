@@ -8,10 +8,11 @@ const categorySchema = new Schema({
         required: true,
         unique: true
     },
-    // slug: {
-    //     type: String,
-    //     lowercase: true
-    // }
+    courses: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Course',
+        required: true
+    }]
 })
 
 

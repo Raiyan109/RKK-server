@@ -4,6 +4,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/users.js')
 const categoryRoutes = require('./routes/categories.js')
+const courseRoutes = require('./routes/courses.js')
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes)
 app.use('/api/categories', categoryRoutes)
+app.use('/api/courses', courseRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
